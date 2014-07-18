@@ -19,8 +19,9 @@ module.exports = (robot) ->
           msg.send "Couldn't fetch weather for "#{query}\""
           return
 
-        place       = weather['name']
-        temperature = weather['main']['temp']
-        description = weather['weather'][0]['description']
+        place        = weather['name']
+        temperature  = weather['main']['temp']
+        description  = weather['weather'][0]['description']
+        country_code = weather['sys']['country']
 
-        msg.send "#{place}: #{temperature}ºC, #{description}"
+        msg.send "#{place}, #{country_code}: #{temperature}ºC, #{description}"
